@@ -44,8 +44,6 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
 
-    // text = "New Text" <---- Wrong way to update default text
-    // setText("New Text"); <---- Correct way to update default text
     return (
     <>
         <div className='container' style={{color: props.mode==='dark'?'white':'#042743'}}>
