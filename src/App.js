@@ -13,7 +13,7 @@ import {
 function App() {
   const [mode, setMode] = useState('light');
   const [alert, setAlert] = useState(null);
-
+  
   const showAlert = (message, type) => {
     setAlert({
       msg: message,
@@ -54,10 +54,10 @@ function App() {
     <>
     <Router>
       <Navbar title="TextUtils" about="About Us" mode={mode} toggleMode={toggleMode} changeTheme={changeTheme} />
-      {alert && <Alert alert={alert} />}
+      <Alert alert={alert}/>
       <div className="container my-3">
         <Routes>
-            <Route exact path="/about" element={<About mode={mode} /*{themeColor={themeColor}}*//>}>
+            <Route exact path="/about" element={<About mode={mode}/>}>
             </Route>
             <Route exact path="/" element={<TextForm heading="Enter your text to analyze" showAlert={showAlert} mode={mode} />}>
             </Route>
