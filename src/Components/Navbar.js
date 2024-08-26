@@ -19,16 +19,6 @@ export default function Navbar(props) {
               <Link className="nav-link" to='/about'>{props.about}</Link>
             </li>
           </ul>
-          <div className="btn-group mx-3">
-            <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Select Theme
-            </button>
-            <ul className="dropdown-menu">
-              <li><button className="dropdown-item" onClick={() => props.changeTheme('green')}>Green</button></li>
-              <li><button className="dropdown-item" onClick={() => props.changeTheme('red')}>Red</button></li>
-              <li><button className="dropdown-item" onClick={() => props.changeTheme('yellow')}>Yellow</button></li>
-            </ul>
-          </div>
           <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
             <input className="form-check-input" type='checkbox' onClick={props.toggleMode} id="flexSwitchCheckDefault"/>
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
@@ -44,5 +34,4 @@ Navbar.propTypes = {
   about: PropTypes.string.isRequired,
   mode: PropTypes.string.isRequired,
   toggleMode: PropTypes.func.isRequired,
-  changeTheme: PropTypes.func.isRequired
 }

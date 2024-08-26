@@ -38,22 +38,10 @@ function App() {
     }
   };
 
-  const changeTheme = (color) => {
-    if (color === 'green') {
-      document.body.style.backgroundColor = '#198754';
-    } else if (color === 'red') {
-      document.body.style.backgroundColor = '#dc3545';
-    } else if (color === 'yellow') {
-      document.body.style.backgroundColor = '#e4ff00';
-    }
-
-    showAlert(`${color.charAt(0).toUpperCase() + color.slice(1)} theme has been enabled`, "success");
-  };
-
   return (
     <>
     <Router>
-      <Navbar title="TextUtils" about="About Us" mode={mode} toggleMode={toggleMode} changeTheme={changeTheme} />
+      <Navbar title="TextUtils" about="About Us" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <div className="container my-3">
         <Routes>
