@@ -6,31 +6,26 @@ export default function TextForm(props) {
     const handleUpClick = () =>{
         let newText = text.toUpperCase();
         setText(newText)
-        props.showAlert("Converted to Upper Case", "success")
     }
 
     const handleLowClick = () =>{
         let newText = text.toLowerCase();
         setText(newText)
-        props.showAlert("Converted to Lower Case", "success")
     }
 
     const handleClearClick = () =>{
         let newText = '';
         setText(newText)
-        props.showAlert("Text Cleared", "success")
     }
 
     const Copytext = () =>{
         navigator.clipboard.writeText(text);
-        props.showAlert("Text Copied", "success")
         document.getSelection().removeAllRanges();
     }
 
     const handleRemoveExtraSpaces = () =>{
         let newText = text.split(/\s+/).join(" ");
         setText(newText)
-        props.showAlert("Extra Spaces Removed", "success")
     }
 
     const TextSummary = () => {
@@ -63,7 +58,7 @@ export default function TextForm(props) {
             <h2>Text Summary</h2>
             <p>{TextSummary()}</p>
             <h2>Preview</h2>
-
+            
             <p>{text.length>0?text:"Nothing to preview"}</p>
         </div>
     </>

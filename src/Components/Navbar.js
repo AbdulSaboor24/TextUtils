@@ -19,9 +19,24 @@ export default function Navbar(props) {
               <Link className="nav-link" to='/about'>{props.about}</Link>
             </li>
           </ul>
-          <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
-            <input className="form-check-input" type='checkbox' onClick={props.toggleMode} id="flexSwitchCheckDefault"/>
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+          <div className="theme-toggle" onClick={props.toggleMode} style={{ cursor: 'pointer' }}>
+            {props.mode === 'light' ? (
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/000000/moon-symbol.png"
+              alt="Dark Mode"
+              width="30"
+              height="30"
+              className="img-fluid"
+            />
+            ) : (
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/ffffff/sun--v1.png"
+              alt="Light Mode"
+              width="30"
+              height="30"
+              className="img-fluid"
+            />
+            )}
           </div>
         </div>
       </div>
